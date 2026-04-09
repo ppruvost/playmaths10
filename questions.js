@@ -3,110 +3,105 @@
    ============================================================ */
 
 const questions = [
+  /* ================= PROBABILITÉS ================= */
+
   {
-    question: "Que se passe-t-il lorsqu’un rayon lumineux arrive sur un miroir ?",
-    options: ["Il disparaît", "Il est réfléchi", "Il est absorbé", "Il change de couleur"],
-    graphique: "rayon_reflexion_miroir.png",
-    bonne_reponse: "Il est réfléchi",
-    explication: "La lumière est renvoyée dans le même milieu : c’est la réflexion."
-  },
-  {
-    question: "Quelle relation existe entre l’angle d’incidence i et l’angle réfléchi i’ ?",
-    options: ["i = i’", "i > i’", "i < i’", "i + i’ = 90°"],
-    graphique: "angles_reflexion.png",
-    bonne_reponse: "i = i’",
-    explication: "Selon la loi de la réflexion, l’angle d’incidence est égal à l’angle réfléchi."
-  },
-  {
-    question: "Que représente la normale dans une expérience de réflexion ?",
+    question: "Que représente l’événement E dans ce contexte ?",
     options: [
-      "Une ligne parallèle à la surface",
-      "Une ligne perpendiculaire à la surface",
-      "Le rayon lumineux",
-      "La direction du miroir"
+      "Le dossier est validé",
+      "Le dossier contient une erreur",
+      "Le système fonctionne",
+      "Le client est satisfait"
     ],
-    graphique: "normale_surface.png",
-    bonne_reponse: "Une ligne perpendiculaire à la surface",
-    explication: "La normale est une droite perpendiculaire à la surface au point d’impact."
+    graphique: "evenement_E.png",
+    bonne_reponse: "Le dossier contient une erreur",
+    explication: "E correspond à l’événement : le dossier contient une erreur."
   },
   {
-    question: "Que se passe-t-il lorsqu’un rayon lumineux passe de l’air au plexiglas ?",
+    question: "Quelle est la probabilité qu’un dossier contienne une erreur ?",
+    options: ["0,1", "0,8", "0,05", "0,9"],
+    graphique: "probabilite_erreur.png",
+    bonne_reponse: "0,1",
+    explication: "10 % des dossiers contiennent une erreur, soit 0,1."
+  },
+  {
+    question: "Que signifie P(E ∩ D) ?",
     options: [
-      "Il disparaît",
-      "Il est réfléchi uniquement",
-      "Il change de direction",
-      "Il reste identique"
+      "Aucun dossier détecté",
+      "Dossiers sans erreur",
+      "Dossiers erronés détectés",
+      "Dossiers non détectés"
     ],
-    graphique: "refraction_air_plexiglas.png",
-    bonne_reponse: "Il change de direction",
-    explication: "La lumière subit une réfraction lorsqu’elle change de milieu."
+    graphique: "intersection_ED.png",
+    bonne_reponse: "Dossiers erronés détectés",
+    explication: "P(E ∩ D) représente les dossiers avec erreur ET détectés."
   },
   {
-    question: "Quelle grandeur caractérise un milieu transparent ?",
-    options: ["La masse", "La vitesse", "L’indice de réfraction", "La température"],
-    graphique: "indice_refraction.png",
-    bonne_reponse: "L’indice de réfraction",
-    explication: "L’indice de réfraction mesure la capacité d’un milieu à dévier la lumière."
+    question: "Quelle est la probabilité que le système détecte une erreur ?",
+    options: ["0,08", "0,045", "0,125", "0,64"],
+    graphique: "probabilite_detection.png",
+    bonne_reponse: "0,125",
+    explication: "P(D) = 0,08 + 0,045 = 0,125."
   },
   {
-    question: "Dans la loi de Snell-Descartes, que signifie n1 ?",
+    question: "Quelle est la probabilité qu’un dossier soit erroné sachant qu’il est détecté ?",
+    options: ["0,64", "0,125", "0,08", "0,9"],
+    graphique: "probabilite_conditionnelle.png",
+    bonne_reponse: "0,64",
+    explication: "P(E sachant D) = 0,64 soit 64 %."
+  },
+
+  /* ================= FONCTIONS ================= */
+
+  {
+    question: "Quelle est la dérivée de la fonction h(x) = x³ − 6x² + 9x + 12 ?",
     options: [
-      "L’angle d’incidence",
-      "L’indice du premier milieu",
-      "La vitesse de la lumière",
-      "La distance parcourue"
+      "3x² − 12x + 9",
+      "x² − 6x + 9",
+      "3x² − 6x + 9",
+      "x³ − 12x + 9"
     ],
-    graphique: "loi_snell_schema.png",
-    bonne_reponse: "L’indice du premier milieu",
-    explication: "n1 correspond à l’indice du milieu d’où vient la lumière."
+    graphique: "derivee_fonction.png",
+    bonne_reponse: "3x² − 12x + 9",
+    explication: "La dérivée d’un polynôme se calcule terme à terme."
   },
   {
-    question: "Que se passe-t-il si l’angle d’incidence dépasse l’angle limite ?",
+    question: "Quelle est la forme factorisée de h’(x) ?",
     options: [
-      "La lumière disparaît",
-      "La lumière est totalement réfléchie",
-      "La lumière traverse toujours",
-      "La lumière ralentit"
+      "3(x − 1)(x − 3)",
+      "(x − 1)(x − 3)",
+      "3(x + 1)(x − 3)",
+      "3(x − 1)(x + 3)"
     ],
-    graphique: "reflexion_totale.png",
-    bonne_reponse: "La lumière est totalement réfléchie",
-    explication: "C’est le phénomène de réflexion totale."
+    graphique: "factorisation.png",
+    bonne_reponse: "3(x − 1)(x − 3)",
+    explication: "On factorise le polynôme du second degré."
   },
   {
-    question: "Dans quel cas observe-t-on la réflexion totale ?",
+    question: "Quelles sont les solutions de h’(x) = 0 ?",
     options: [
-      "Air vers verre",
-      "Verre vers air avec grand angle",
-      "Dans le vide",
-      "Sur un miroir uniquement"
+      "x = 1 et x = 3",
+      "x = 0 et x = 6",
+      "x = 2 et x = 4",
+      "x = 3 uniquement"
     ],
-    graphique: "angle_limite_schema.png",
-    bonne_reponse: "Verre vers air avec grand angle",
-    explication: "La réflexion totale se produit quand la lumière passe d’un milieu plus réfringent vers un moins réfringent avec un angle suffisant."
+    graphique: "solutions_derivee.png",
+    bonne_reponse: "x = 1 et x = 3",
+    explication: "Les racines sont obtenues à partir des facteurs."
   },
   {
-    question: "Pourquoi utilise-t-on la réflexion totale dans les fibres optiques ?",
-    options: [
-      "Pour ralentir la lumière",
-      "Pour changer sa couleur",
-      "Pour la garder confinée dans le câble",
-      "Pour l’absorber"
-    ],
-    graphique: "fibre_optique.png",
-    bonne_reponse: "Pour la garder confinée dans le câble",
-    explication: "La réflexion totale permet de guider la lumière sur de longues distances."
+    question: "Quelle est la valeur de h(3) ?",
+    options: ["12", "66", "0", "9"],
+    graphique: "calcul_h3.png",
+    bonne_reponse: "12",
+    explication: "En remplaçant x par 3 dans la fonction, on obtient 12."
   },
   {
-    question: "Dans un milieu homogène et transparent, comment se propage la lumière ?",
-    options: [
-      "En cercle",
-      "En ligne droite",
-      "En zigzag",
-      "De manière aléatoire"
-    ],
-    graphique: "propagation_rectiligne.png",
-    bonne_reponse: "En ligne droite",
-    explication: "La lumière se propage de façon rectiligne dans un milieu homogène."
+    question: "Combien d’agents faut-il mobiliser pour optimiser le temps ?",
+    options: ["1", "3", "6", "0"],
+    graphique: "minimum_fonction.png",
+    bonne_reponse: "3",
+    explication: "Le minimum de la fonction est atteint pour x = 3."
   }
 ];
 
